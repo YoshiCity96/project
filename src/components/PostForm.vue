@@ -3,14 +3,19 @@
 		<h4>Создание поста</h4>
 		<input class="input" v-model="post.title" type="text" placeholder="Название">
 		<input class="input" v-model="post.body" type="text" placeholder="Описание">
-		<button class="btn" @click="CreatePost" >Создать</button>
+		<my-button style="align-self: flex-end; margin-top: 15px;" class="btn" @click="CreatePost" >Создать</my-button>
 	</form>
 </template>
 
 
 <script>
+import MyButton  from './UI/MyButton.vue';
 export default {
+	components:{
+		MyButton
+	},
 data(){
+	
 	return{
 		post:{
 			title:'',
@@ -44,12 +49,5 @@ form{
 	margin-top: 10px;
 }
 
-.btn{
-	align-self: flex-end;
-	margin-top: 15px;
-	background: none;
-	border: 2px solid orange;
-	padding: 10px;
-	border-radius: 5px;
-}
+
 </style>
